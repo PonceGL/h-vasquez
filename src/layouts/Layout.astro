@@ -1,4 +1,9 @@
 ---
+import Header from '../components/Header.astro';
+import { COMPANY } from '../constants/company';
+
+import "../styles/global.css";
+
 interface Props {
 	title: string;
 }
@@ -7,44 +12,48 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="title" content={COMPANY.name}>
+		<meta name="description" content={`${COMPANY.fullName} 24 años de experiencia en la compra-venta de material para construcción, transportes de carga, construcción.`}>
+		<meta name="keywords" content="Materiales, Transportes, Inmobiliaria, Veracruz, Construcción">
+		<meta name="category" content="Grupo empresarial de transportes y venta de materiales para construcción">
+		<meta name="og:title" content={COMPANY.name}>
+		<meta name="og:description" content={`${COMPANY.fullName} 24 años de experiencia en la compra-venta de material para construcción, transportes de carga, construcción.`}>
+		<meta property="og:url" content="https://grupovasquez.com.mx/">
+		<meta property="og:site_name" content={COMPANY.name}>
+		<meta property="og:locale" content="es">
+		<meta property="og:image" content={COMPANY.image}>
+		<meta property="og:image:width" content="375">
+		<meta property="og:image:height" content="281">
+		<meta property="og:image:alt" content={COMPANY.fullName}>
+		<meta property="og:image" content={COMPANY.image}>
+		<meta property="og:image:width" content="375">
+		<meta property="og:image:height" content="281">
+		<meta property="og:image:alt" content={COMPANY.fullName}>
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content={COMPANY.name}>
+		<meta name="twitter:creator" content={COMPANY.name}>
+		<meta name="twitter:description" content={`${COMPANY.fullName} 24 años de experiencia en la compra-venta de material para construcción, transportes de carga, construcción.`}>
+		<meta name="twitter:image" content={COMPANY.image}>
+		<link rel="icon" href="/icon_grupo.ico">
+		<link rel="apple-touch-icon" href="/icon_grupo.ico">
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="Spanish">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/icon_grupo.ico" />
 		<title>{title}</title>
 	</head>
+
+
 	<body>
+		<Header />
 		<slot />
+		<div class="w-full max-w-7xl mx-auto">
+			footer
+		</div>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

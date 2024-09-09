@@ -1,0 +1,72 @@
+---
+import { COMPANIES } from "../../constants/company";
+import type { Pillar } from "../../types/company";
+import RoundedButton from "../RoundedButton.astro";
+import TitleBorder from "../TitleBorder.astro";
+
+const specialists = [
+"Urbanización",
+"Construcción Residencial",
+"Movimiento de Tierras",
+"Pavimentación concreto Asfaltico e Hidráulico",
+"Líneas de Conducción de Agua",
+"Tanques Elevados",
+"Drenaje Sanitario",
+"Drenaje Pluvial",
+"Remodelación Casa Habitación",
+"Mantenimiento Centros de Salud",
+"Puentes",
+]
+
+const projects: Pillar []= [
+    {
+        title: "La Molienda",
+        description: "Lorem ipsum dolor sit amet constur adipelit sed.",
+        image: "https://res.cloudinary.com/civsa/image/upload/v1640809137/propiedades/kpzjwvl7ndqdwmk9ovzv.jpg?w=3840&q=75",
+    },
+    {
+        title: "Pedregal de La Marquesa",
+        description: "Lorem ipsum dolor sit amet constur adipelit sed.",
+        image: "https://res.cloudinary.com/civsa/image/upload/v1641843379/propiedades/uvrrr2aogblofa5whubx.jpg?w=3840&q=75",
+    },
+    {
+        title: "Otro Proyecto",
+        description: "Lorem ipsum dolor sit amet constur adipelit sed.",
+        image: "https://res.cloudinary.com/civsa/image/upload/v1638203929/brand/g4iizeszdlxuchc2fxrc.jpg",
+    }
+]
+
+---
+
+<section class="w-full flex flex-wrap justify-between items-center">
+    <div class="w-full flex flex-col justify-center items-center gap-12">
+        <TitleBorder />
+        <h3 class="text-3xl font-semibold text-left text-main">{COMPANIES.CONSTRUCTORA.fullName}</h3>
+        <div class="w-full flex flex-col justify-center items-center gap-4">
+            <p class="font-medium text-lg text-center">SOMOS ESPECIALISTAS EN:</p>
+            <ul class="w-full flex flex-wrap justify-center items-center gap-4">
+                {specialists.map((speciality) => (
+                    <li class="font-light text-xl text-left text-gray-600">{speciality}</li>
+                ))}
+            </ul>
+        </div>
+        <ul class="w-full flex flex-wrap justify-evenly items-center gap-10">
+            {projects.map(({title, description, image}) => (
+                <li class='w-96 aspect-square flex flex-col justify-center items-center gap-4 bg-white shadow-black/20 shadow-md'>
+                    <div class="w-full aspect-[4/3]">
+                        <img src={image} alt={title} class='w-full h-full object-cover' />
+                    </div>
+                    <div class="w-full p-4">
+                        <h3 class='font-semibold text-xl text-center text-main capitalize'>{title}</h3>
+                    <p class='font-medium text-sm text-center'>{description}</p>
+                    </div>
+                </li>
+            ))}
+        </ul>
+        {COMPANIES.CONSTRUCTORA.website && (
+            <div class="w-full flex justify-center items-center">
+                <RoundedButton link={COMPANIES.CONSTRUCTORA.website} target="_blank" text="Contáctanos" />
+            </div>
+        )}
+    </div>
+</section>

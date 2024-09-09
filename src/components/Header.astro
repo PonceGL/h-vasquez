@@ -1,0 +1,18 @@
+---
+import { COMPANY } from "../constants/company";
+
+import Menu from "./Navigation/Menu.astro";
+import RoundedButton from "./RoundedButton.astro";
+---
+
+<header class="w-full max-w-7xl p-4 mx-auto flex justify-between items-center">
+    <div class="w-fit flex justify-center items-center">
+        <h1 class="text-3xl text-main font-bold">{COMPANY.name}</h1>
+    </div>
+    <div class="w-full hidden">
+        <Menu />
+    </div>
+    <div class="w-fit flex justify-center items-center">
+        <RoundedButton link="#contact" text="Contáctanos" />
+    </div>
+</header>

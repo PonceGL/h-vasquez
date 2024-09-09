@@ -1,0 +1,14 @@
+---
+import type { Pillar } from '../../types/company';
+
+interface Props extends Pillar {
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<li class='w-72 p-4 aspect-square flex flex-col justify-center items-center gap-4 bg-white shadow-black/20 shadow-md'>
+    <img src={image} alt={title} class='w-28 aspect-square max-w-full object-contain' />
+    <h3 class='font-semibold text-lg text-center text-main capitalize'>{title}</h3>
+    <p class='font-medium text-sm text-center'>{description}</p>
+</li>

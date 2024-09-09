@@ -1,0 +1,35 @@
+<span class="section-title-border" />
+
+<style>
+    .section-title-border {
+        position: relative;
+        margin-bottom: 20px;
+        display: block;
+        height: 5px;
+        width: 30px;
+        border-radius: 10px;
+        /* background-color: #86c33a; */
+        background-color: #35b5fa;
+    }
+    .section-title-border:before {
+        position: absolute;
+        right: -60%;
+        left: 2rem;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        border-radius: 10px;
+        background-color: #35b5fa;
+        content: "";
+    }
+    .section-title-border:after {
+        position: absolute;
+        right: -100%;
+        top: 0;
+        height: 100%;
+        width: 25%;
+        border-radius: 10px;
+        background-color: #35b5fa;
+        content: "";
+    }
+</style>

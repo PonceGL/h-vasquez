@@ -1,0 +1,56 @@
+---
+import { COMPANIES } from "../../constants/company";
+import RoundedButton from "../RoundedButton.astro";
+import TitleBorder from "../TitleBorder.astro";
+
+const highlights = [
+    {
+        title: "SERVICIO",
+        image: "/logotipos/transportes-1.png",
+    },
+    {
+        title: "EXPERIENCIA",
+        image: "/logotipos/transportes-2.png",
+    },
+    {
+        title: "SEGURIDAD",
+        image: "/logotipos/trasnportes-grupo-vasquez.png",
+    },
+]
+
+---
+
+<section class="w-full flex flex-col justify-center items-end gap-8">
+    <div class="w-full max-w-2xl flex flex-col justify-between items-end gap-8">
+        <div class="w-fit mr-8 flex justify-center items-center">
+            <TitleBorder />
+        </div>
+        <h3 class="text-3xl font-semibold text-right text-main">{COMPANIES.TRANSPORTES.fullName}</h3>
+    </div>
+
+    <div class="w-full mx-auto rounded-md overflow-hidden aspect-video">
+        <img src={COMPANIES.TRANSPORTES.image} alt={COMPANIES.TRANSPORTES.name} class="w-full h-full object-cover" />
+    </div>
+
+    <div class="w-full mx-auto flex flex-col justify-center items-center">
+        <ul class="w-full p-4 flex flex-col justify-evenly items-center gap-8 rounded-md md:bg-main md:flex-row">
+            {highlights.map(({title, image}) => (
+                <li class="flex flex-col justify-center items-center gap-4">
+                    <p class="font-bold text-xl text-center text-main md:text-white">{title}</p>
+                </li>
+            ))}
+        </ul>
+        <ul class="w-full p-4 grid grid-cols-4 gap-4">
+            {highlights.map(({title, image}) => (
+                <li class={`${image === '/logotipos/transportes-1.png' && 'col-span-2'} flex flex-col justify-center items-center gap-4`}>
+                    <img src={image} alt={title} class='max-w-full h-10 object-contain md:h-14' />
+                </li>
+            ))}
+        </ul>
+    </div>
+
+    <div class="w-full mt-10 flex justify-center items-center lg:w-fit">
+        <RoundedButton link={`tel:+52${COMPANIES.TRANSPORTES.phone.trim()}`} text="Contáctanos" />
+    </div>
+    <input type="hidden" name="hidden" class="col-span-2">
+</section>

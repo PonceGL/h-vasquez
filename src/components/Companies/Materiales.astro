@@ -1,0 +1,37 @@
+---
+import { COMPANIES } from "../../constants/company";
+import RoundedButton from "../RoundedButton.astro";
+import TitleBorder from "../TitleBorder.astro";
+
+const products = ["FERRETERIA",
+"OBRA NEGRA",
+"MUEBLES",
+"ACABADOS",
+"HOGAR",
+"AGREGADOS",
+"LINEA BLANCA",
+"ELECTRODOMESTICOS"]
+---
+
+<section class="w-full flex flex-wrap justify-between items-center gap-8">
+    <div class="w-full max-w-lg rounded-md overflow-hidden aspect-[4/3] lg:aspect-square">
+        <img src={COMPANIES.MATERIALES.image} alt={COMPANIES.MATERIALES.name} class="w-full h-full object-cover" />
+    </div>
+    <div class="w-full max-w-2xl flex flex-col justify-between items-start gap-8">
+        <TitleBorder />
+        <h3 class="text-3xl font-semibold text-left text-main">{COMPANIES.MATERIALES.fullName}</h3>
+        <div class="w-full flex flex-col justify-start items-start gap-4">
+            <p class="font-medium text-lg text-left">MANEJAMOS PRODUCTOS EN:</p>
+            <ul class="w-full grid grid-cols-1 grid-rows-8 gap-2">
+                {products.map((product) => (
+                    <li class="font-normal text-base text-left text-gray-600">{product}</li>
+                ))}
+            </ul>
+        </div>
+        {COMPANIES.MATERIALES.website && (
+            <div class="w-full flex justify-center items-center lg:w-fit">
+                <RoundedButton link={COMPANIES.MATERIALES.website} target="_blank" text="Contáctanos" />
+            </div>
+        )}
+    </div>
+</section>

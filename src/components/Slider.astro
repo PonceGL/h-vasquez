@@ -1,0 +1,72 @@
+---
+import { COMPANIES } from "../constants/company";
+
+const slider = [
+  {
+    name: COMPANIES.MATERIALES.name,
+    image: COMPANIES.MATERIALES.image,
+  },
+  {
+    name: COMPANIES.TRANSPORTES.name,
+    image: COMPANIES.TRANSPORTES.image,
+  },
+  {
+    name: COMPANIES.CONSTRUCTORA.name,
+    image: COMPANIES.CONSTRUCTORA.image,
+  },
+  {
+    name: COMPANIES.TRANSPORTES_MJM.name,
+    image: COMPANIES.TRANSPORTES_MJM.image,
+  },
+];
+---
+
+<section 
+class="w-full h-[40rem] max-w-7xl mx-auto flex justify-start items-center overflow-hidden"
+>
+    <div class="w-[400%] h-[100%] flex flex-row justify-between items-center slider">
+        {slider.map(({image, name}) => (
+            <div class="min-w-full h-full relative">
+                {/* <div class="w-fit py-4 px-8 bg-black/5 backdrop-blur-light rounded-sm absolute left-0 bottom-32">
+                    <span class="text-lg text-white font-semibold capitalize">{name}</span>
+                </div> */}
+                <img src={image} alt={name} class="w-full h-full object-cover" />
+            </div>
+        ))}
+    </div>
+  </section>
+
+  <style>
+    .slider {
+        animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+    }
+    @keyframes sliding {
+        0% {
+            transform: translateX(0%);
+        }
+        20% {
+            transform: translateX(0%);
+        }
+        25% {
+            transform: translateX(-100%);
+        }
+        45% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(-200%);
+        }
+        70% {
+            transform: translateX(-200%);
+        }
+        75% {
+            transform: translateX(-300%);
+        }
+        95% {
+            transform: translateX(-300%);
+        }
+        100% {
+            transform: translateX(-400%);
+        }
+    }
+  </style>
