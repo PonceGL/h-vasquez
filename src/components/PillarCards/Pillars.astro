@@ -1,12 +1,14 @@
 ---
 import { PILLARS } from "../../constants/company";
+import TitleBorder from "../TitleBorder.astro";
 import Card from "./Card.astro";
 ---
 
-<section class="w-full flex justify-center items-center relative">
+<section class="w-full flex flex-col justify-center items-center relative">
     <ul class="w-full flex flex-wrap justify-evenly items-center gap-10 -translate-y-20">
         {PILLARS.map((pillar) => (
             <Card {...pillar} />
         ))}
     </ul>
+    <TitleBorder />
 </section>

@@ -5,10 +5,8 @@ import Menu from "./Navigation/Menu.astro";
 import RoundedButton from "./RoundedButton.astro";
 ---
 
-<header class="w-full max-w-7xl p-4 mx-auto flex justify-between items-center">
-    <div class="w-fit flex justify-center items-center">
-        <h1 class="text-3xl text-main font-bold">{COMPANY.name}</h1>
-    </div>
+<header class="w-full max-w-screen-2xl p-4 mx-auto flex justify-between items-center">
+    <img src="./logotipos/grupo-vasquez.png" alt={COMPANY.name} class='h-20 aspect-[4/3] object-contain' />
     <div class="w-full hidden">
         <Menu />
     </div>

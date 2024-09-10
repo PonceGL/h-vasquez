@@ -2,24 +2,27 @@
 import { COMPANIES } from "../../constants/company";
 import RoundedButton from "../RoundedButton.astro";
 import TitleBorder from "../TitleBorder.astro";
+import CompanyTitle from "../CompanyTitle.astro";
 
-const products = ["FERRETERIA",
-"OBRA NEGRA",
-"MUEBLES",
-"ACABADOS",
-"HOGAR",
-"AGREGADOS",
-"LINEA BLANCA",
-"ELECTRODOMESTICOS"]
+const products = [
+    "FERRETERIA",
+    "OBRA NEGRA",
+    "MUEBLES",
+    "ACABADOS",
+    "HOGAR",
+    "AGREGADOS",
+    "LINEA BLANCA",
+    "ELECTRODOMESTICOS"
+]
 ---
 
 <section class="w-full flex flex-wrap justify-between items-center gap-8">
-    <div class="w-full max-w-lg rounded-md overflow-hidden aspect-[4/3] lg:aspect-square">
+    <div class="w-full max-w-2xl rounded-md overflow-hidden aspect-[4/3] lg:max-w-[48%]">
         <img src={COMPANIES.MATERIALES.image} alt={COMPANIES.MATERIALES.name} class="w-full h-full object-cover" />
     </div>
-    <div class="w-full max-w-2xl flex flex-col justify-between items-start gap-8">
+    <div class="w-full max-w-2xl flex flex-col justify-between items-start gap-8 lg:max-w-[48%]">
         <TitleBorder />
-        <h3 class="text-3xl font-semibold text-left text-main">{COMPANIES.MATERIALES.fullName}</h3>
+        <CompanyTitle text={COMPANIES.MATERIALES.fullName} />
         <div class="w-full flex flex-col justify-start items-start gap-4">
             <p class="font-medium text-lg text-left">MANEJAMOS PRODUCTOS EN:</p>
             <ul class="w-full grid grid-cols-1 grid-rows-8 gap-2">

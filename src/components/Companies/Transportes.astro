@@ -1,5 +1,6 @@
 ---
 import { COMPANIES } from "../../constants/company";
+import CompanyTitle from "../CompanyTitle.astro";
 import RoundedButton from "../RoundedButton.astro";
 import TitleBorder from "../TitleBorder.astro";
 
@@ -25,14 +26,14 @@ const highlights = [
         <div class="w-fit mr-8 flex justify-center items-center">
             <TitleBorder />
         </div>
-        <h3 class="text-3xl font-semibold text-right text-main">{COMPANIES.TRANSPORTES.fullName}</h3>
+        <CompanyTitle text={COMPANIES.TRANSPORTES.fullName} />
     </div>
 
     <div class="w-full mx-auto rounded-md overflow-hidden aspect-video">
         <img src={COMPANIES.TRANSPORTES.image} alt={COMPANIES.TRANSPORTES.name} class="w-full h-full object-cover" />
     </div>
 
-    <div class="w-full mx-auto flex flex-col justify-center items-center">
+    <div class="w-full mx-auto flex flex-col justify-center items-center lg:gap-4">
         <ul class="w-full p-4 flex flex-col justify-evenly items-center gap-8 rounded-md md:bg-main md:flex-row">
             {highlights.map(({title, image}) => (
                 <li class="flex flex-col justify-center items-center gap-4">
@@ -49,7 +50,7 @@ const highlights = [
         </ul>
     </div>
 
-    <div class="w-full mt-10 flex justify-center items-center lg:w-fit">
+    <div class="w-full mt-10 flex justify-center items-center">
         <RoundedButton link={`tel:+52${COMPANIES.TRANSPORTES.phone.trim()}`} text="Contáctanos" />
     </div>
     <input type="hidden" name="hidden" class="col-span-2">

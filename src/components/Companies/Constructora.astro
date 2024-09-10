@@ -1,6 +1,7 @@
 ---
 import { COMPANIES } from "../../constants/company";
 import type { Pillar } from "../../types/company";
+import CompanyTitle from "../CompanyTitle.astro";
 import RoundedButton from "../RoundedButton.astro";
 import TitleBorder from "../TitleBorder.astro";
 
@@ -40,13 +41,15 @@ const projects: Pillar []= [
 
 <section class="w-full flex flex-wrap justify-between items-center">
     <div class="w-full flex flex-col justify-center items-center gap-12">
-        <TitleBorder />
-        <h3 class="text-3xl font-semibold text-left text-main">{COMPANIES.CONSTRUCTORA.fullName}</h3>
+        <div class="w-full flex flex-col justify-center items-center">
+            <TitleBorder />
+            <CompanyTitle text={COMPANIES.CONSTRUCTORA.fullName} />
+        </div>
         <div class="w-full flex flex-col justify-center items-center gap-4">
             <p class="font-medium text-lg text-center">SOMOS ESPECIALISTAS EN:</p>
             <ul class="w-full flex flex-wrap justify-center items-center gap-4">
                 {specialists.map((speciality) => (
-                    <li class="font-light text-xl text-left text-gray-600">{speciality}</li>
+                    <li class="font-light text-base text-left text-gray-600 lg:text-xl">{speciality}</li>
                 ))}
             </ul>
         </div>
@@ -58,7 +61,7 @@ const projects: Pillar []= [
                     </div>
                     <div class="w-full p-4">
                         <h3 class='font-semibold text-xl text-center text-main capitalize'>{title}</h3>
-                    <p class='font-medium text-sm text-center'>{description}</p>
+                        <p class='font-medium text-sm text-center'>{description}</p>
                     </div>
                 </li>
             ))}
