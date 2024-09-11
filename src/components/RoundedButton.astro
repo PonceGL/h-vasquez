@@ -8,7 +8,7 @@ const { link, text, ...restOfProps } = Astro.props;
 ---
 
 <div class="w-full flex justify-center items-center">
-	<a href={link} class="w-fit px-8 py-4 flex justify-center items-center bg-main text-white font-semibold rounded-full hover:shadow-lg hover:shadow-main/50 transition-shadow duration-300"
+	<a href={link} class="w-fit px-8 py-3 flex justify-center items-center bg-main text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-main/50 transition-shadow duration-300"
 	{...restOfProps}
 	>{text}</a>
 </div>

@@ -9,9 +9,11 @@ export interface Company {
 }
 
 export interface WebData extends Company {
-    city: string;
-    state: string;
-    zip: string;
+  city: string;
+  state: string;
+  zip: string;
+  email: string;
+  whatsapp?: string;
 }
 
 export interface Companies  {

@@ -2,15 +2,35 @@
 import { COMPANY } from "../constants/company";
 
 import Menu from "./Navigation/Menu.astro";
-import RoundedButton from "./RoundedButton.astro";
 ---
 
-<header class="w-full max-w-screen-2xl p-4 mx-auto flex justify-between items-center">
-    <img src="./logotipos/grupo-vasquez.png" alt={COMPANY.name} class='h-20 aspect-[4/3] object-contain' />
-    <div class="w-full hidden">
+<nav id="nav" class="bg-white sticky w-full max-w-screen-2xl p-4 mx-auto flex flex-row justify-center items-center z-20 top-0 start-0 transition-all duration-300">
+    <div class="w-full flex flex-row justify-between items-center">
+        <div id="logo-company-container" class="w-full mx-auto flex justify-center items-center transition-all delay-100 md:w-fit md:m-0 md:justify-start">
+            <a href="#" class="flex justify-start items-center gap-6 transition-all delay-100 md:w-max">
+                <img src="./logotipos/grupo-vasquez.png" class="h-16 md:h-10 transition-all duration-300" id="logo-company" alt={COMPANY.name}>
+                <h1 class="hidden md:flex md:text-3xl md:font-normal md:whitespace-nowrap">{COMPANY.name}</h1>
+            </a>
+        </div>
         <Menu />
     </div>
-    <div class="w-fit flex justify-center items-center">
-        <RoundedButton link="#contact" text="Contáctanos" />
-    </div>
-</header>
+</nav>
+
+
+<script>
+    const logoCompanyContainer = document.getElementById('logo-company-container');
+    const logoCompany = document.getElementById('logo-company');
+    if(window.innerWidth < 768 && logoCompanyContainer && logoCompany){
+        window.addEventListener('scroll', function(event) {
+            const scrollPosition = window.scrollY;
+            if(scrollPosition > 30){
+                logoCompany.style.height = '2rem';
+                logoCompanyContainer.style.justifyContent = 'start';
+            }else if(scrollPosition < 20){
+                logoCompany.style.height = '4rem';
+                logoCompanyContainer.style.justifyContent = 'center';
+
+            }
+        });
+    }
+</script>

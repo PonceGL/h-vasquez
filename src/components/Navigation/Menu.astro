@@ -1,26 +1,18 @@
 ---
-import { COMPANIES } from "../../constants/company";
-
-const menu = [
-    {
-        name: COMPANIES.MATERIALES.name,
-    },
-    {
-        name: COMPANIES.TRANSPORTES.name,
-    },
-    {
-        name: COMPANIES.CONSTRUCTORA.name,
-    },
-    {
-        name: COMPANIES.TRANSPORTES_MJM.name,
-    },
-];
+import { COMPANY } from "../../constants/company";
+import RoundedButton from "../RoundedButton.astro";
 ---
 
-<nav class="w-full p-4 flex flex-row justify-end items-center">
-    <ul class="w-full p-4 flex flex-row justify-end items-center gap-4">
-        {menu.map(({name}) => (
-            <li>{name}</li>
-        ))}
+<div class="hidden md:w-full md:flex md:flex-row md:items-center md:justify-end md:gap-8" id="navbar-sticky">
+    <ul class="hidden lg:flex lg:gap-8 lg:flex-row lg:justify-end lg:items-center">
+        <li>
+            <a href={`mailto:${COMPANY.email.trim()}`} class="block py-2 px-3 text-main rounded hover:bg-gray-100/50">{COMPANY.email}</a>
+        </li>
+        <li>
+            <a href={`tel:+52${COMPANY.phone.trim()}`} class="block py-2 px-3 text-main rounded hover:bg-gray-100/50">{COMPANY.phone}</a>
+        </li>
     </ul>
-</nav>
+    <div class="hidden md:flex space-x-3">
+        <RoundedButton link="#contact" text="Contáctanos" />
+    </div>
+</div>

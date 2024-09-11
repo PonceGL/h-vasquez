@@ -7,7 +7,9 @@ export const COMPANY: WebData = {
   city: "Xalapa",
   state: "Veracruz",
   zip: "",
-  phone: "",
+  phone: "228 812 3456",
+  email: "contacto@grupovasquez.com",
+  whatsapp: "228 865 4321",
   image:
     "https://res.cloudinary.com/civsa/image/upload/v1701203902/empresarial3/h1fv3ipzgp9rdaqack6x.jpg",
 };
@@ -19,8 +21,8 @@ export const COMPANIES: Companies = {
     address: "Lázaro Cárdenas 274, Encinal, 91180 Xalapa, Ver.",
     mapsUrl: "https://maps.app.goo.gl/BWNJgs1Q4v9Tvw3w7",
     phone: "228 840 1919",
-    image:
-      "https://res.cloudinary.com/civsa/image/upload/v1701203902/empresarial3/h1fv3ipzgp9rdaqack6x.jpg",
+    // image: "https://res.cloudinary.com/civsa/image/upload/v1701203902/empresarial3/h1fv3ipzgp9rdaqack6x.jpg",
+    image: "/sample/building.jpg",
     website: "https://materialesvasquez.com/",
   },
   TRANSPORTES: {
@@ -28,8 +30,8 @@ export const COMPANIES: Companies = {
     fullName: "TRANSPORTES VASQUEZ S.A. DE C.V.",
     address: "",
     phone: "228 155 0849",
-    image:
-      "https://res.cloudinary.com/civsa/image/upload/v1701203909/empresarial3/acm188uzxyiocjbk7fus.jpg",
+    image: "/sample/transportes.jpg",
+    // image: "https://res.cloudinary.com/civsa/image/upload/v1701203909/empresarial3/acm188uzxyiocjbk7fus.jpg",
   },
   CONSTRUCTORA: {
     name: "CONSTRUCTORA E INMOBILIARIA",

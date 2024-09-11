@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: "#075985",
+        main: "#07183c",
       },
       backdropBlur: {
         light: "1px",
